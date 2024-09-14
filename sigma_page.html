@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #ff6347; /* Tomato color */
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        p {
+            color: #333;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio element -->
+    <audio id="birthdayAudio" src="Recording.m4a" preload="auto"></audio>
+
+    <div class="card">
+        <h1>Happy Birthday Kyle!</h1>
+        <p>Congratulations on reaching another milestone!</p>
+        <p>I hope you have a fantastic day filled with joy and celebration.</p>
+        <p>For your hard work, here is a cool code:</p>
+        <p>RI-ZZJA-KB61-QJ01-6JUV</p>
+        <a href="index.html" class="button">Back to Home</a>
+    </div>
+
+    <!-- JavaScript to play the sound -->
+    <script>
+        window.onload = function() {
+            var audio = document.getElementById('birthdayAudio');
+            audio.play().catch(function(error) {
+                console.log("Audio play error:", error);
+            });
+        };
+    </script>
+</body>
+</html>

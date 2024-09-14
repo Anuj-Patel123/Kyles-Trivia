@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 0.5rem 0;
+        }
+
+        input[type="text"] {
+            font-size: 1rem;
+            padding: 0.75rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            margin: 1rem 0;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #feedback {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Congratulations!</h1>
+        <p>You scored 3 out of 3!</p>
+        <p>Great job!</p>
+        
+        <!-- Bonus Question Form -->
+        <h2>Bonus Question</h2>
+        <p>Are you Sigma?</p>
+        <form id="bonus-form">
+            <input type="text" id="sigma-answer" placeholder="Type Yes or No" aria-label="Answer to the bonus question">
+            <button type="button" onclick="checkSigma()">Submit</button>
+        </form>
+        
+        <!-- Feedback -->
+        <div id="feedback"></div>
+    </div>
+    
+    <script>
+        function checkSigma() {
+            const answer = document.getElementById("sigma-answer").value.trim().toLowerCase();
+            const feedback = document.getElementById("feedback");
+
+            if (answer === "yes") {
+                // Redirect to another page if the answer is "yes"
+                window.location.href = 'sigma_page.html'; // Replace 'sigma_page.html' with your actual target page
+            } else if (answer === "no") {
+                feedback.innerHTML = "<p>You got it wrong!</p>";
+            } else {
+                feedback.innerHTML = "<p>Please answer with 'Yes' or 'No'.</p>";
+            }
+
+            // Clear input field after submission
+            document.getElementById("sigma-answer").value = '';
+        }
+    </script>
+</body>
+</html>
